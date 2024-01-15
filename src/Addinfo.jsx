@@ -3,9 +3,6 @@ import React from "react";
 export const AddInfo = (data) => {
         const currentWeather = data.data.data;
         let currentdate = new Date();
-        let sunrise = currentWeather.sys.sunrise;
-        console.log(currentWeather)
-        console.log(currentdate)
     return(
         <>
             <div className="center-div">
@@ -46,7 +43,7 @@ export const AddInfo = (data) => {
                     </div>
                     <div className="row">
                         <p className="text"><strong>Sunrise</strong></p>
-                        <p className="desc">{currentWeather.sys.sunrise.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })}</p>
+                        <p className="desc">{currentWeather.sys.sunrise}</p>
                     </div>
                 </div>
                 <div>
@@ -56,11 +53,10 @@ export const AddInfo = (data) => {
                     </div>
                     <div className="row">
                         <p className="text"><strong>Sunset</strong></p>
-                        <p className="desc">{currentWeather.sys.sunset.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })}</p>
+                        <p className="desc">{currentWeather.sys.sunset }</p>
                     </div>
                 </div>
             </div>
         </>
-
     )
 }

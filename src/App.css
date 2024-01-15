@@ -61,7 +61,7 @@ h1{
   font-size: 25px;
 }
 .row{
-  width: 220px;
+  width: 250px;
   border-bottom: 1px dashed black;
   display: flex;
   flex-direction: row;
