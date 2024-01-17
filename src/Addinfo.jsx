@@ -3,6 +3,9 @@ import React from "react";
 export const AddInfo = (data) => {
         const currentWeather = data.data.data;
         let currentdate = new Date();
+        let sunrise = new Date(currentWeather.sys.sunrise * 1000);
+        let sunset = new Date(currentWeather.sys.sunset * 1000);
+
     return(
         <>
             <div className="center-div">
@@ -10,7 +13,11 @@ export const AddInfo = (data) => {
                 <p className="time">As of {currentdate.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })}</p>
                <div className="clouds">
                     <div className="temp">{Math.round(currentWeather.main.temp - 273.15)}<sup>0</sup></div>
-                    <div className="clouds"> {currentWeather.weather[0].main}  </div>
+                   <div>
+                       {/*<div className="clouds"> <span dangerouslySetInnerHTML= {{__html: currentWeather.weather[0].icon}} /></div>*/}
+                       <div className="clouds"> {currentWeather.weather[0].main}  </div>
+                   </div>
+
                </div>
                 <p className="weader-description">{currentWeather.weather[0].description}</p>
             </div>
@@ -43,7 +50,7 @@ export const AddInfo = (data) => {
                     </div>
                     <div className="row">
                         <p className="text"><strong>Sunrise</strong></p>
-                        <p className="desc">{currentWeather.sys.sunrise}</p>
+                        <p className="desc">{sunrise.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })}</p>
                     </div>
                 </div>
                 <div>
@@ -53,7 +60,7 @@ export const AddInfo = (data) => {
                     </div>
                     <div className="row">
                         <p className="text"><strong>Sunset</strong></p>
-                        <p className="desc">{currentWeather.sys.sunset }</p>
+                        <p className="desc">{sunset.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true })}</p>
                     </div>
                 </div>
             </div>

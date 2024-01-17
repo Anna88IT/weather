@@ -16,14 +16,16 @@ export const FormSubmit = () => {
     const APIKEY = "e6d2f6f7a2cc8b41b0ad47d1ede36fa9"
     async function weatherData(e) {
         e.preventDefault();
-        if (city === "") {
-          alert("Add values");
-        } else {
-          const data = await fetch(
-            `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=${APIKEY}`
-          )
-            .then((res) => res.json())
-            .then((data) => data);
+
+            if (city === "") {
+                alert("Add values");
+            } else {
+
+                const data = await fetch(
+                    `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&APPID=${APIKEY}`
+                )
+                    .then((res) => res.json())
+                    .then((data) => data);
           setWeather({data: data});
         }
       }
