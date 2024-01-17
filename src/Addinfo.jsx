@@ -14,7 +14,7 @@ export const AddInfo = (data) => {
                <div className="clouds">
                     <div className="temp">{Math.round(currentWeather.main.temp - 273.15)}<sup>0</sup></div>
                    <div>
-                       {/*<div className="clouds"> <span dangerouslySetInnerHTML= {{__html: currentWeather.weather[0].icon}} /></div>*/}
+
                        <div className="clouds"> {currentWeather.weather[0].main}  </div>
                    </div>
 
